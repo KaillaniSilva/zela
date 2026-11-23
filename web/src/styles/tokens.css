@@ -1,0 +1,28 @@
+/* Tokens compartilhados com o app (app/src/lib/theme.js) */
+:root {
+  --primary: #0b5d4b;
+  --primary-dark: #073f33;
+  --primary-soft: #e3f1ec;
+  --accent: #ffc83d;
+  --bg: #f6f8f5;
+  --surface: #ffffff;
+  --text: #16201c;
+  --text-muted: #46534d;
+  --border: #c9d3ce;
+  --danger: #b91c1c;
+  --focus: #1d4ed8;
+
+  --radius-sm: 10px;
+  --radius-md: 16px;
+  --radius-lg: 24px;
+
+  --font: 'Atkinson Hyperlegible', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+
+  /* Movimento: curto e com desaceleração — orienta sem atrasar */
+  --dur-fast: 160ms;
+  --dur-base: 260ms;
+  --dur-slow: 420ms;
+  --ease-out: cubic-bezier(0.2, 0.8, 0.2, 1);
+
+  --shadow: 0 1px 2px rgb(0 0 0 / 0.06), 0 6px 20px rgb(11 93 75 / 0.08);
+}

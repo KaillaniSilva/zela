@@ -1,0 +1,51 @@
+{
+  "expo": {
+    "name": "Zela",
+    "slug": "zela",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/icon.png",
+    "userInterfaceStyle": "light",
+    "ios": {
+      "supportsTablet": true,
+      "infoPlist": {
+        "NSLocationWhenInUseUsageDescription": "O Zela usa sua localização para marcar onde está o problema.",
+        "NSCameraUsageDescription": "O Zela usa a câmera para fotografar o problema.",
+        "NSPhotoLibraryUsageDescription": "O Zela usa suas fotos para anexar ao relato."
+      }
+    },
+    "android": {
+      "adaptiveIcon": {
+        "backgroundColor": "#0B5D4B",
+        "foregroundImage": "./assets/android-icon-foreground.png",
+        "backgroundImage": "./assets/android-icon-background.png",
+        "monochromeImage": "./assets/android-icon-monochrome.png"
+      },
+      "permissions": [
+        "ACCESS_COARSE_LOCATION",
+        "ACCESS_FINE_LOCATION",
+        "CAMERA"
+      ]
+    },
+    "web": {
+      "favicon": "./assets/favicon.png"
+    },
+    "plugins": [
+      "expo-router",
+      [
+        "expo-location",
+        {
+          "locationWhenInUsePermission": "O Zela usa sua localização para marcar onde está o problema."
+        }
+      ],
+      [
+        "expo-image-picker",
+        {
+          "cameraPermission": "O Zela usa a câmera para fotografar o problema.",
+          "photosPermission": "O Zela usa suas fotos para anexar ao relato."
+        }
+      ]
+    ],
+    "scheme": "zela"
+  }
+}
