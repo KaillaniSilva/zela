@@ -5,7 +5,7 @@
 **Autora:** Kaillani da Silva Lima — RM565263
 
 **Deploy da web:** https://zela-puce.vercel.app
-**Vídeo-pitch:** _(link do YouTube)_
+**Vídeo-pitch:** https://youtu.be/pbqbN4OStDw
 
 ---
 

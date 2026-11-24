@@ -80,7 +80,7 @@ Nada pisca, nada fica se repetindo e o texto nunca sai do lugar enquanto a pesso
 ## 8. Links
 - GitHub: https://github.com/KaillaniSilva/zela
 - Deploy web: https://zela-puce.vercel.app
-- Vídeo: …
+- Vídeo: https://youtu.be/pbqbN4OStDw
 
 ---
 
