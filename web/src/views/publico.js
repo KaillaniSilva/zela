@@ -35,7 +35,7 @@ export async function mount(root) {
         <div>
           <p class="eyebrow">Pirituba · São Paulo</p>
           <h1>O que o bairro está relatando</h1>
-          <p class="lead">Moradores relatam pelo app Zela. A subprefeitura responde por aqui. Todo mundo acompanha.</p>
+          <p class="lead">Calçadas, praças, pontos de ônibus e postes que atrapalham quem tem 60 anos ou mais. Os moradores relatam pelo app Zela, a subprefeitura responde por aqui e a família acompanha.</p>
         </div>
         <dl class="stats" aria-label="Resumo dos relatos">
           <div class="stat"><dt>Abertos</dt><dd id="st-abertos">–</dd></div>
