@@ -26,6 +26,12 @@
 5. Já tentou reclamar? Como foi?
 6. Quem da família ou da vizinhança te ajuda com essas coisas?
 
+**Pessoa 1 · moradora de Pirituba:** calçada quebrada e levantada por raízes no caminho da padaria, três vezes por semana; já tropeçou e, com chuva, muda de caminho. Galaxy A14, usa WhatsApp e previsão do tempo. Atrapalha: "letra pequena e menu escondido" e cadastro com código por mensagem. Abriu pedido no 156 com a filha, anotou o protocolo e "fiquei sem saber onde acompanhar". A filha ajuda com apps; a vizinha avisa sobre calçadas ruins.
+
+**Pessoa 2 · Seu Marcos, 60 anos:** travessia perigosa na avenida para pegar o ônibus, quase todo dia; passou a andar até o semáforo e evita ruas escuras. Moto G54, usa WhatsApp, horário do ônibus, banco e mapa. Atrapalha: app lento ou que pede login de novo; "com sol batendo na tela [...] eu só quero abrir e ver". No 156 teve que voltar ao local para conferir o nome da rua; nada mudou. O filho ajuda com o celular; o vizinho do ponto avisa pelo WhatsApp.
+
+**O que isso mudou no Zela:** sem cadastro nem login; texto grande e abas sempre visíveis; endereço preenchido pelo GPS; linha do tempo e avisos para acompanhar o protocolo; "Enviar para a família"; "Eu também vi" para os vizinhos.
+
 ## 3. Atores e jornadas
 
 | Etapa | Idoso (app) | Familiar (web) | Vizinho (app) | Agente (web /painel) |
