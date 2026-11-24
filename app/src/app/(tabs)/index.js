@@ -1,5 +1,5 @@
 import { useCallback, useEffect, useState } from 'react';
-import { FlatList, RefreshControl, StyleSheet, Text, View } from 'react-native';
+import { Animated, FlatList, RefreshControl, StyleSheet, Text, View } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { router, useFocusEffect } from 'expo-router';
 import { Ionicons } from '@expo/vector-icons';
@@ -80,12 +80,12 @@ export default function Home() {
       <OfflineBanner />
 
       <View style={[styles.hero]}>
-        <View style={heroAnim}>
+        <Animated.View style={heroAnim}>
           <Text style={styles.h1} accessibilityRole="header">
             Viu um problema na rua?
           </Text>
           <Text style={styles.lead}>Leva menos de 30 segundos. A prefeitura recebe na hora e você acompanha por aqui.</Text>
-        </View>
+        </Animated.View>
         <ZButton
           size="lg"
           variant="accent"

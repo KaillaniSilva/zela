@@ -24,7 +24,7 @@ export default function ReportCard({ report, index = 0, onPress, onSupport, supp
   return (
     // O botão "Eu também vi" fica fora da área tocável do card: assim o
     // leitor de tela (TalkBack/VoiceOver) chega nele como um botão separado.
-    <Animated.View style={[enter, pulse, styles.card]}>
+    <Animated.View style={[styles.card, { opacity: enter.opacity, transform: [...enter.transform, ...pulse.transform] }]}>
       <Pressable
         onPress={onPress}
         disabled={!onPress}
