@@ -8,6 +8,8 @@ export const CATEGORIES = {
   arvore: { label: 'Árvore com risco', icon: 'leaf', weight: 3 },
   alagamento: { label: 'Alagamento', icon: 'drop', weight: 3 },
   sinalizacao: { label: 'Placa ou sinalização', icon: 'sign', weight: 2 },
+  mato: { label: 'Mato alto na praça', icon: 'grass', weight: 2 },
+  ponto: { label: 'Ponto de ônibus', icon: 'bus', weight: 2 },
   outro: { label: 'Outro problema', icon: 'dots', weight: 1 },
 };
 

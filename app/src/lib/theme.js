@@ -29,6 +29,8 @@ export const CATEGORIES = {
   arvore:      { label: 'Árvore com risco',     icon: 'leaf-outline' },
   alagamento:  { label: 'Alagamento',           icon: 'water-outline' },
   sinalizacao: { label: 'Placa ou sinalização', icon: 'trail-sign-outline' },
+  mato:        { label: 'Mato alto na praça',   icon: 'flower-outline' },
+  ponto:       { label: 'Ponto de ônibus',      icon: 'bus-outline' },
   outro:       { label: 'Outro problema',       icon: 'ellipsis-horizontal-circle-outline' },
 };
 

@@ -1,63 +1,77 @@
-# Zela — rascunho do documento PDF e do vídeo-pitch
+# Zela — rascunho do documento e do vídeo-pitch
 
-> Ajuste com o que o grupo observou no bairro. **Inclua falas reais de moradores** (o desafio pede para conversar com quem convive com o problema).
-
-## 1. Integrantes (ordem alfabética)
+## 1. Autora
 - Kaillani da Silva Lima — RM565263
-- …
 
 ## 2. Problema e cidadão beneficiado
-**Cidadão:** o morador de Pirituba que anda a pé, de ônibus ou de carro pelo bairro. O foco são os mais afetados por problemas na rua: idosos, pessoas com deficiência e mães com carrinho de bebê.
+**Cidadão:** pessoas com 60 anos ou mais que moram em Pirituba e dependem das calçadas, praças, pontos de ônibus e da iluminação pública para manter a rotina e a autonomia (UBS, feira, padaria, igreja, centro de convivência).
 
-**Problema:** buracos, postes apagados, entulho, calçadas quebradas e bocas de lobo entupidas ficam semanas sem solução. Isso acontece todos os dias, principalmente em vias de bairro e perto de pontos de ônibus, escolas e UBS.
+**Situações enfrentadas:**
+- Calçada quebrada ou levantada por raiz, degrau sem rampa, buraco na faixa: todos os dias, no caminho mais curto. Medo de cair, troca de caminho.
+- Poste apagado e ponto de ônibus sem luz: à noite a pessoa deixa de sair ou só sai acompanhada.
+- Mato alto e entulho na praça: o banco some e a caminhada da manhã acaba.
+- Ponto de ônibus sem banco nem cobertura, semáforo curto: cansaço e susto.
 
-**Por que acontece:** quem passa pelo problema não sabe onde reclamar e acha os canais oficiais longos. Quando reclama, não recebe retorno. A subprefeitura, por sua vez, recebe pedidos repetidos, sem foto e sem local exato, e não tem como saber o que é mais urgente.
+**Por que o problema continua:** os canais oficiais pedem cadastro, senha e muitos passos e quase nunca dão retorno. O idoso desiste ou pede a um familiar. A subprefeitura recebe pedidos repetidos, sem foto e sem local exato.
 
-**Justificativa:** é um problema real, frequente e visível, que afeta mais quem tem mobilidade reduzida. Uma solução digital simples encurta a distância entre o morador e o poder público.
+**Relação com a tecnologia:** celular Android simples, muitas vezes herdado da família, com fonte aumentada. Usa bem WhatsApp, câmera e chamada de vídeo. Tem dificuldade com cadastro e senha, botões pequenos, termos técnicos e telas que mudam sozinhas.
+
+**Persona — Dona Cida, 71 anos:** aposentada, mora sozinha perto da Av. Mutinga. Caminha até a padaria todo dia e vai à UBS uma vez por mês. Celular com letra grande, fala com a filha pelo WhatsApp. Já tropeçou na calçada em frente à UBS e hoje faz um caminho mais longo.
+
+**Roteiro da conversa com idosos:**
+1. Que problema você encontra no caminho e com que frequência?
+2. Alguma vez deixou de sair ou mudou o caminho por causa disso?
+3. Qual celular você usa e para quê?
+4. O que mais atrapalha quando usa um aplicativo?
+5. Já tentou reclamar? Como foi?
+6. Quem da família ou da vizinhança te ajuda com essas coisas?
 
 ## 3. Atores e jornadas
 
-| Etapa | Morador (app) | Vizinho (app) | Agente da subprefeitura (web) | Público (web) |
+| Etapa | Idoso (app) | Familiar (web) | Vizinho (app) | Agente (web /painel) |
 |---|---|---|---|---|
-| Entrada | Vê o problema na rua e abre o app | Abre o app e vê "Perto de você" | Faz login no painel no computador | Abre o link do mapa |
-| Ação | Tipo → foto + GPS → enviar (3 toques) | "Eu também vi" | Lê a fila ordenada por prioridade e abre o detalhe | Filtra por tipo ou situação, ou consulta o protocolo |
-| Dificuldade tratada | Sinal ruim → **fila offline**; pressa → etapas curtas | Relatos repetidos → **apoio** no lugar de duplicar | Excesso de pedidos → **prioridade automática** | Falta de retorno → **transparência** |
-| Fim | Recebe aviso e vibração a cada mudança | Vê o problema subir na fila | Muda o status e escreve a mensagem | Acompanha os indicadores |
+| Entrada | Vê a calçada quebrada e abre o app | Recebe o protocolo pelo WhatsApp | Vê "Perto de você" | Faz login no painel |
+| Ação | Tipo → foto + GPS → enviar, sem cadastro | Abre o link e vê a linha do tempo | "Eu também vi" | Lê a fila por prioridade |
+| Dificuldade tratada | Medo de errar: 3 etapas, botões grandes. Sem sinal: fila offline | Não quer instalar app | Relatos repetidos → apoio | Excesso de pedidos → prioridade automática |
+| Fim | Recebe aviso e vibração; envia o protocolo para a família | Acompanha até "Resolvido" | Vê o problema subir na fila | Muda o status e escreve ao morador |
 
-**Papel de cada plataforma:** o app vai para a rua (câmera, GPS, offline, vibração). A web fica na mesa do agente (tela grande, triagem, mapa) e é pública (transparência, acesso sem instalar nada).
+**Associação de moradores:** usa o Mapa do bairro e os indicadores para cobrar a subprefeitura com dados.
 
 ## 4. Integração mobile ↔ web
-Supabase (Postgres, Realtime, Storage e Auth). O relato criado no app aparece na hora no painel e no mapa. A mudança de status feita na web chega ao app em tempo real, e gatilhos no banco mantêm protocolo, linha do tempo e contagem de apoios. Veja o diagrama no README.
+Supabase (Postgres, Realtime, Storage e Auth). O relato criado no app aparece na hora no painel e no mapa. A mudança de status feita na web chega ao celular do idoso em tempo real e aparece no link de protocolo que a família recebeu. Gatilhos no banco mantêm protocolo, linha do tempo e contagem de apoios.
 
-## 5. Decisões de design e UX
-- **Identidade comum:** verde Zela (#0B5D4B), que remete a cuidado e cidade verde, com amarelo "sinal de trânsito" (#FFC83D) nas ações principais. App e web usam os mesmos tokens, ícones de traço e status.
-- **Hierarquia:** uma ação principal por tela ("Relatar um problema"). No painel, a prioridade aparece primeiro em cada card.
-- **Linguagem simples:** "Eu também vi", "Aguardando internet", "Não atendido" em vez de termos técnicos.
-- **Prevenção de erro:** aviso de relato duplicado a menos de 80 m e validação do formato do protocolo.
+## 5. Decisões guiadas pelo público idoso
 
-## 6. Motion design (onde e para quê)
+| Dificuldade | Decisão |
+|---|---|
+| Cadastro e senha | Nenhum cadastro |
+| Botões pequenos, mão trêmula | Toque ≥ 56dp, bem espaçado, com vibração |
+| Letra pequena | Textos grandes que crescem com a fonte do sistema, contraste AA |
+| Medo de errar | Uma ação por tela, barra de etapas, tela de sucesso |
+| Usa WhatsApp para tudo | "Enviar para a família" |
+| Sinal fraco | Fila offline, "Aguardando internet" |
+| Termos técnicos | "Eu também vi", "Não atendido", "Calçada quebrada" |
+
+## 6. Motion design (calmo, 160 a 420 ms)
 | Onde | Movimento | Função |
 |---|---|---|
 | App · Relatar | Barra de progresso cresce; etapa entra da direita | Mostra em que etapa a pessoa está |
 | App · Botões | Escala 0,96 + vibração leve | Confirma o toque |
-| App · Sucesso | Check "salta" (spring) | Confirma o envio |
+| App · Sucesso | Check "salta" | Confirma o envio |
 | App · Status muda | Toast desce do topo + pulso no selo + timeline cresce | Avisa da mudança de estado |
 | App · Listas | Entrada em cascata | Indica a ordem de leitura |
 | Web · Troca de página | View Transitions | Dá continuidade à navegação |
-| Web · Novo relato | Card desliza para a fila com brilho amarelo; marcador "cai" no mapa | Chama atenção para o que é novo |
-| Web · Reordenação | Animação FLIP dos cards | Mostra para onde o item foi |
-| Web · Carregamento | Skeleton | Indica que o conteúdo está chegando |
-| Web · Erro | Leve "tremida" na mensagem | Indica o erro sem depender de cor |
-Tudo é curto (160 a 420 ms) e é desligado com "Reduzir movimento".
+| Web · Novo relato | Card desliza com brilho amarelo; marcador "cai" no mapa | Chama atenção para o que é novo |
+| Web · Reordenação | FLIP dos cards | Mostra para onde o item foi |
+| Web · Carregamento / erro | Skeleton; leve "tremida" | Indica espera e erro sem depender de cor |
 
-## 7. Acessibilidade
-Veja a lista no README: contraste AA, status por ícone + texto + forma, toque ≥ 56dp, leitores de tela, teclado, foco visível, fonte Atkinson Hyperlegible, `rem` e movimento reduzido.
+Nada pisca, nada fica se repetindo e o texto nunca sai do lugar enquanto a pessoa lê. Tudo desliga com "Reduzir movimento".
 
-## 8. ODS
-- **ODS 11 — Cidades e comunidades sustentáveis (meta 11.2 e 11.7):** ruas e calçadas seguras e acessíveis, sobretudo para idosos e pessoas com deficiência.
-- **ODS 16 — Paz, justiça e instituições eficazes (meta 16.6 e 16.7):** instituições transparentes, que prestam contas, e participação do cidadão.
+## 7. ODS
+- **ODS 11 (metas 11.2 e 11.7):** espaços públicos seguros, inclusivos e acessíveis, em especial para pessoas idosas.
+- **ODS 16 (metas 16.6 e 16.7):** instituições transparentes e participação do cidadão.
 
-## 9. Links
+## 8. Links
 - GitHub: https://github.com/KaillaniSilva/zela
 - Deploy web: https://zela-puce.vercel.app
 - Vídeo: …
@@ -67,10 +81,11 @@ Veja a lista no README: contraste AA, status por ícone + texto + forma, toque �
 ## Roteiro do vídeo (2min45)
 | Tempo | Cena | Fala (resumo) |
 |---|---|---|
-| 0:00–0:20 | Imagens de buraco ou poste apagado no bairro, depoimento de morador | O problema e quem sofre com ele |
-| 0:20–0:35 | Logo Zela | "O Zela liga quem vê o problema a quem resolve" |
-| 0:35–1:15 | Tela do celular: relatar com foto, aviso de duplicado, envio | Jornada do morador, 3 toques, offline |
-| 1:15–1:50 | Tela dividida: painel web recebe o relato ao vivo → agente muda status → celular vibra | **Integração em tempo real** |
-| 1:50–2:15 | Mapa público, consulta de protocolo, celular no modo avião | Transparência e fila offline |
-| 2:15–2:35 | Leitor de tela (TalkBack/VoiceOver), navegação por teclado, movimento reduzido | Acessibilidade e motion com função |
-| 2:35–2:45 | ODS 11 e 16, integrantes | Encerramento |
+| 0:00–0:20 | Calçada quebrada, poste apagado, praça com mato; fala de uma pessoa idosa | Para muita gente é incômodo; para o idoso é uma queda ou ficar em casa |
+| 0:20–0:35 | Logo Zela | "O Zela liga quem vê o problema a quem resolve, e a família acompanha" |
+| 0:35–1:10 | Celular: relatar calçada quebrada com foto, botões grandes, envio | Jornada do idoso: 3 toques, sem cadastro |
+| 1:10–1:25 | "Enviar para a família" → WhatsApp → link abre na web | Jornada do familiar |
+| 1:25–1:55 | Tela dividida: painel recebe o relato ao vivo → agente muda status → celular vibra | **Integração em tempo real** |
+| 1:55–2:15 | Mapa público, modo avião (fila offline) | Transparência e sinal fraco |
+| 2:15–2:35 | Fonte grande do sistema, TalkBack, movimento reduzido | Acessibilidade e motion calmo |
+| 2:35–2:45 | ODS 11 e 16, autora | Encerramento |

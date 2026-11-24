@@ -13,7 +13,7 @@ create table if not exists public.reports (
   created_at     timestamptz not null default now(),
   updated_at     timestamptz not null default now(),
   category       text not null check (category in
-                   ('buraco','iluminacao','lixo','calcada','arvore','alagamento','sinalizacao','outro')),
+                   ('buraco','iluminacao','lixo','calcada','arvore','alagamento','sinalizacao','mato','ponto','outro')),
   description    text check (char_length(description) <= 500),
   photo_url      text,
   lat            double precision not null,
@@ -24,6 +24,11 @@ create table if not exists public.reports (
   device_id      text not null,
   supports_count integer not null default 0
 );
+
+-- Projetos criados com a lista antiga de categorias: atualiza a regra
+alter table public.reports drop constraint if exists reports_category_check;
+alter table public.reports add constraint reports_category_check check (category in
+  ('buraco','iluminacao','lixo','calcada','arvore','alagamento','sinalizacao','mato','ponto','outro'));
 
 create table if not exists public.report_events (
   id         uuid primary key default gen_random_uuid(),

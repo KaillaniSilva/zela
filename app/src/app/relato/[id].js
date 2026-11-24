@@ -1,5 +1,5 @@
 import { useCallback, useEffect, useState } from 'react';
-import { ActivityIndicator, Animated, Image, ScrollView, StyleSheet, Text, View } from 'react-native';
+import { ActivityIndicator, Animated, Image, ScrollView, Share, StyleSheet, Text, View } from 'react-native';
 import { useLocalSearchParams } from 'expo-router';
 import { Ionicons } from '@expo/vector-icons';
 import StatusBadge from '../../components/StatusBadge';
@@ -66,6 +66,16 @@ export default function Detalhe() {
     }
   };
 
+  // O familiar acompanha pela web, sem instalar o app
+  const shareWithFamily = () => {
+    Share.share({
+      message:
+        `Relatei um problema no bairro pelo Zela: ${cat.label}` +
+        (report.address ? ` (${report.address})` : '') +
+        `. Protocolo ${report.protocol}. Acompanhe aqui: https://zela-puce.vercel.app/#/protocolo?p=${report.protocol}`,
+    }).catch(() => {});
+  };
+
   return (
     <ScrollView contentContainerStyle={styles.body}>
       <View style={[{ gap: space(3) }]}>
@@ -91,6 +101,20 @@ export default function Detalhe() {
         <Text style={styles.h2} accessibilityRole="header">Andamento</Text>
         <StatusTimeline status={report.status} events={events} />
       </Animated.View>
+
+      {isMine && (
+        <View style={styles.card}>
+          <Text style={styles.h2} accessibilityRole="header">Avise sua família</Text>
+          <Text style={styles.meta}>Mande o protocolo por WhatsApp. Quem receber acompanha o andamento pelo site, sem instalar nada.</Text>
+          <ZButton
+            label="Enviar para a família"
+            icon="share-social-outline"
+            variant="secondary"
+            onPress={shareWithFamily}
+            accessibilityHint="Abre as opções para compartilhar o protocolo"
+          />
+        </View>
+      )}
 
       <View style={styles.card}>
         <Text style={styles.h2} accessibilityRole="header">

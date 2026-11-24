@@ -7,6 +7,8 @@ const P = {
   leaf: '<path d="M5 19c0-9 6-14 15-14 0 9-5 15-14 15"/><path d="M5 19 13 11"/>',
   drop: '<path d="M12 3s6 6.5 6 11a6 6 0 0 1-12 0c0-4.5 6-11 6-11z"/>',
   sign: '<path d="M12 3v18M6 6h10l2 2.5L16 11H6z"/>',
+  grass: '<path d="M3 20h18"/><path d="M6 20c0-4-1-7-3-9M10 20c0-5 1-9 3-12M14 20c0-3 1-6 4-8M18 20c0-2 .5-4 2-5"/>',
+  bus: '<rect x="5" y="3" width="14" height="14" rx="2"/><path d="M5 10h14M8 17v3M16 17v3"/><circle cx="8.5" cy="13.5" r=".5"/><circle cx="15.5" cy="13.5" r=".5"/>',
   dots: '<circle cx="5" cy="12" r="1.5"/><circle cx="12" cy="12" r="1.5"/><circle cx="19" cy="12" r="1.5"/>',
   inbox: '<path d="M3 13h5l1.5 3h5L16 13h5"/><path d="M5 5h14l2 8v6H3v-6z"/>',
   search: '<circle cx="11" cy="11" r="6"/><path d="m20 20-4.5-4.5"/>',
